@@ -65,21 +65,21 @@ public class Catalogo {
 
 	// Cerca un elemento per anno
 	public static List<Archivio> getByYear(int anno) throws SQLException {
-		List<Archivio> resultList = em.createNamedQuery("Archive.findByYear", Archivio.class).setParameter("anno", anno)
+		List<Archivio> resultList = em.createNamedQuery("Archivio.findByYear", Archivio.class).setParameter("anno", anno)
 				.getResultList();
 		return resultList;
 	}
 
 	// Cerca un elemento per autore
 	public static List<Archivio> getByAuthor(String author) throws SQLException {
-		Query query = em.createNamedQuery("Archive.findByAuthor", Archivio.class);
+		Query query = em.createNamedQuery("Archivio.findByAuthor", Archivio.class);
 		query.setParameter("author", author);
 		return query.getResultList();
 	}
 
 	// Cerca un elemento per titolo
 	public static List<Archivio> getByTitle(String titolo) throws SQLException {
-		Query query = em.createNamedQuery("Archive.findByTitle");
+		Query query = em.createNamedQuery("Archivio.findByTitle");
 		query.setParameter("titolo", titolo);
 		return query.getResultList();
 	}
